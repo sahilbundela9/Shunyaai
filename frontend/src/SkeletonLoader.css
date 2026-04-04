@@ -1,0 +1,59 @@
+.skeleton-loader {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.skeleton-card {
+  background: rgba(20, 20, 35, 0.5);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 212, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.skeleton-line {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 212, 255, 0.1),
+    rgba(168, 85, 247, 0.1),
+    rgba(0, 212, 255, 0.1)
+  );
+  border-radius: 6px;
+  height: 1rem;
+  width: 100%;
+}
+
+.skeleton-title {
+  height: 1.2rem;
+  width: 85%;
+}
+
+.skeleton-subtitle {
+  height: 0.9rem;
+  width: 70%;
+}
+
+.skeleton-text {
+  height: 0.85rem;
+  width:  100%;
+  margin-top: 0.25rem;
+}
+
+.skeleton-text.short {
+  width: 60%;
+}
+
+@media (max-width: 768px) {
+  .skeleton-loader {
+    gap: 1rem;
+  }
+
+  .skeleton-card {
+    padding: 1rem;
+    gap: 0.5rem;
+  }
+}

@@ -1,0 +1,154 @@
+
+
+.about-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.about-main {
+  flex: 1;
+  width: 100%;
+  padding: 2rem 1.5rem;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-hero {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.about-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.about-hero p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.about-content,
+.about-features,
+.about-cta {
+  margin-bottom: 3rem;
+}
+
+.about-content h2,
+.about-features h2,
+.about-cta h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.about-content p {
+  font-size: 1rem;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
+  color: var(--text-secondary);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.feature-card {
+  background: rgba(20, 20, 35, 0.5);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.feature-card:hover {
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+  transform: translateY(-5px);
+}
+
+.feature-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.feature-card p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.about-cta {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(20, 20, 35, 0.5);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  border-radius: 12px;
+}
+
+.cta-btn {
+  background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
+  border: none;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cta-btn:hover {
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+}
+
+@media (max-width: 768px) {
+  .about-main {
+    padding: 1.5rem;
+  }
+
+  .about-hero h1 {
+    font-size: 2rem;
+  }
+
+  .about-content h2,
+  .about-features h2,
+  .about-cta h2 {
+    font-size: 1.5rem;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-main {
+    padding: 1rem;
+  }
+
+  .about-hero h1 {
+    font-size: 1.5rem;
+  }
+}

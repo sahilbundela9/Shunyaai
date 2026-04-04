@@ -1,0 +1,244 @@
+.settings-container {
+  display: flex;
+  min-height: 100vh;
+  background: var(--dark-bg);
+}
+
+.settings-main {
+  flex: 1;
+  overflow-y: auto;
+  padding: 2rem 2.5rem;
+  margin-left: 280px;
+  transition: margin-left 0.3s ease;
+}
+
+.settings-main.sidebar-hidden {
+  margin-left: 0;
+}
+
+.settings-header {
+  margin-bottom: 3rem;
+}
+
+.settings-header h1 {
+  font-size: 2.5rem;
+  background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+}
+
+.settings-header p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+.settings-layout {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 2rem;
+}
+
+.settings-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.settings-tab {
+  background: var(--card-bg);
+  border: 1px solid var(--border-normal);
+  color: var(--text-secondary);
+  padding: 1rem;
+  border-radius: 8px;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.settings-tab:hover {
+  background: var(--accent-light);
+  border-color: var(--neon-cyan);
+  color: var(--neon-cyan);
+}
+
+.settings-tab.active {
+  background: var(--accent-medium);
+  border-color: var(--neon-cyan);
+  color: var(--neon-cyan);
+}
+
+.settings-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.settings-section {
+  background: var(--card-bg);
+  border: 1px solid var(--border-normal);
+  border-radius: 12px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+}
+
+.settings-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+}
+
+.settings-description {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.settings-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.settings-item:last-child {
+  border-bottom: none;
+}
+
+.settings-item-info {
+  flex: 1;
+}
+
+.settings-item-info label {
+  display: block;
+  color: var(--text-primary);
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.settings-item-info p {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.toggle {
+  width: 50px;
+  height: 28px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-normal);
+  border-radius: 14px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.toggle-indicator {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  background: var(--neon-cyan);
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  transition: all 0.3s ease;
+}
+
+.toggle.enabled {
+  background: var(--accent-medium);
+  border-color: var(--neon-cyan);
+}
+
+.toggle.enabled .toggle-indicator {
+  left: 26px;
+  background: var(--neon-cyan);
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+}
+
+.settings-btn {
+  background: transparent;
+  border: 1px solid var(--neon-cyan);
+  color: var(--neon-cyan);
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: fit-content;
+}
+
+.settings-btn:hover {
+  background: var(--accent-light);
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+}
+
+.settings-btn.danger {
+  border-color: #ef4444;
+  color: #ef4444;
+}
+
+.settings-btn.danger:hover {
+  background: rgba(239, 68, 68, 0.1);
+  box-shadow: 0 0 15px rgba(239, 68, 68, 0.3);
+}
+
+@media (max-width: 1024px) {
+  .settings-main {
+    margin-left: 0;
+    padding: 1.5rem;
+  }
+
+  .settings-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .settings-tabs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .settings-main {
+    padding: 1rem;
+  }
+
+  .settings-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .settings-section {
+    padding: 1.5rem;
+  }
+
+  .settings-layout {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .settings-main {
+    padding: 0.75rem;
+  }
+
+  .settings-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .settings-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .toggle {
+    align-self: flex-start;
+  }
+}
